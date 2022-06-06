@@ -15,5 +15,5 @@ with st.echo(code_location="below"):
     st.header("Богатство разных районов Москвы. :money_mouth_face:")
 
     st.write("""
-    lflflf
+    lflflffr
     """)
