@@ -1,13 +1,5 @@
 import streamlit as st
-import requests
 import pandas as pd
-from shapely.geometry import Polygon
-import geopandas as gpd
-import folium
-from streamlit_folium import folium_static
-import json
-import matplotlib.pyplot as plt
-import numpy as np
 import scrapy
 import networkx as nx
 from itertools import combinations
@@ -112,7 +104,6 @@ with st.echo(code_location='below'):
     net.repulsion(node_distance=420, central_gravity=0.33,
                            spring_length=110, spring_strength=0.10,
                            damping=0.95)
-
 
     net.show('net.html')
 
