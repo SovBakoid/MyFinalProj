@@ -7,6 +7,7 @@ import folium
 from streamlit_folium import folium_static
 import json
 import matplotlib.pyplot as plt
+import numpy as np
 
 with st.echo(code_location="below"):
 
@@ -65,7 +66,7 @@ with st.echo(code_location="below"):
 
     url='https://api.cian.ru/search-offers-map/v1/get-clusters-for-map/'
 
-    @st.cache
+    @st.cache()
     def cian_sosat():
         return (requests.post(url, cookies=cookies, headers=headers, data=data))
 
@@ -88,7 +89,7 @@ with st.echo(code_location="below"):
 
     abakan_gdf = gpd.GeoDataFrame(ya_uedu_zhit_v_abakan_frame, geometry = gpd.points_from_xy(ya_uedu_zhit_v_abakan_frame['lon'], ya_uedu_zhit_v_abakan_frame['lat']))
 
-    @st.cache
+    @st.cache()
     def moskva():
         with open('Inside_mkAD.geojson', encoding='utf-8') as mmmomom:
             return(json.load(mmmomom))
@@ -111,7 +112,7 @@ with st.echo(code_location="below"):
 
     folium_static(m, width=850)
 
-    @st.cache
+    @st.cache()
     def regions_of_msc_geofra():
         return gpd.read_file("http://gis-lab.info/data/mos-adm/mo.geojson")
 
@@ -142,3 +143,11 @@ with st.echo(code_location="below"):
     st.pyplot()
 
     #georegions_of_msc=gpd.GeoDataFrame(regions_of_msc, geometry = [Polygon([[[p.x, p.y] for p in f1] for f1 in [[Point(i[0], i[1]) for i in row["cords"]] for _, row in regions_of_msc.iterrows()]])])
+
+    regions_avg_prices2["ln_avg"]=np.log(regions_avg_prices2["real_avg_price"])
+
+    fig, ax = plt.subplots(figsize=(12, 12))
+
+    fig = regions_avg_prices2.plot(column="ln_avg", ax=ax, legend=True)
+
+    st.pyplot()
