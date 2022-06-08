@@ -14,5 +14,16 @@ import streamlit.components.v1 as components
 
 HtmlFile = open('Вывод_данных.html', 'r', encoding='utf-8')
 
-components.html(HtmlFile.read(), height=1500, width=1300)
+components.html(HtmlFile.read(), height=500, width=1000, scrolling=True)
 
+HtmlFile = open('Вывод_данных2.html', 'r', encoding='utf-8')
+
+components.html(HtmlFile.read(), height=500, width=1000, scrolling=True)
+
+shurov=pd.read_csv("GBDD_merc_or_bmw.csv").drop(columns='Unnamed: 0')
+
+shurov
+
+god=pd.read_csv("lat_lan_of_vrum_vrum.csv").drop(columns='Unnamed: 0')
+
+god
