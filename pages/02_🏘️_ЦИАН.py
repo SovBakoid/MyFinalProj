@@ -62,8 +62,8 @@ with st.echo(code_location="below"):
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36',
     }
 
-    proxy={'http': "93.123.226.23:81",
-           'https': "91.199.223.214:3128"}
+    proxy={'http': "http://93.123.226.23:81",
+           'https': "http://91.199.223.214:3128"}
 
     data = '{"zoom":15,"bbox":[{"bottomRight":{"lat":55.542748557514244,"lng":37.923427700607334},"topLeft":{"lat":55.92313314646403,"lng":37.22287762126163}}],"jsonQuery":{"region":{"type":"terms","value":[1]},"_type":"flatsale","engine_version":{"type":"term","value":2}},"extended":true,"subdomain":"www"}'
 
