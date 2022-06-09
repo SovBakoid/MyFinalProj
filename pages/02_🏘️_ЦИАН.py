@@ -72,6 +72,8 @@ with st.echo(code_location="below"):
 
     helloaboba=cian_sosat()
 
+    st.write(type(helloaboba))
+
     yyyuuu= helloaboba.json()
 
     ya_uedu_zhit_v_abakan={"weight":[], "lat": [], "lon":[], "minprice":[], "maxprice":[]}
