@@ -71,7 +71,7 @@ with st.echo(code_location="below"):
 
     @st.cache()
     def cian_sosat():
-        return (requests.post(url, cookies=cookies, headers=headers, data=data, proxies=proxy))
+        return (requests.post(url, cookies=cookies, headers=headers, data=data))
 
     helloaboba=cian_sosat()
 
