@@ -79,8 +79,6 @@ with st.echo(code_location="below"):
 
         st.pyplot()
 
-        geo_sheesh
-
         digits=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
         geo_sheesh["cool_count"]=sheesh["phone_number"].apply(lambda x: 0)
@@ -106,8 +104,6 @@ with st.echo(code_location="below"):
             geo_sheesh["cool_count"]=geo_sheesh["cool_count"]+geo_sheesh["gibdd2_car_plate_number"].apply(lambda x: 1 if bool(re.match(f'{i}\d+{i}{i}\d+', x)) else 0)
 
         geo_sheesh["cool_count"] = geo_sheesh["cool_count"].fillna(0)
-
-        geo_sheesh[geo_sheesh["cool_count"]!=0]
 
         geo_sheesh2=geo_sheesh.drop(columns=["index_right", "phone_number", "yandex_latitude", "yandex_longitude"]).dissolve(by="NAME", aggfunc='sum')
 

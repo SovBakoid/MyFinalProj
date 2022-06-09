@@ -1,14 +1,23 @@
-import re
 import streamlit as st
+import requests
+import pandas as pd
+from shapely.geometry import Polygon
+from shapely.geometry import Point
+import geopandas as gpd
+import folium
+import plotly.express as px
+from streamlit_folium import folium_static
+import json
+import matplotlib.pyplot as plt
+import numpy as np
+import scrapy
+import networkx as nx
+from itertools import combinations
+from pyvis.network import Network
+import streamlit.components.v1 as components
+import sqlite3
+import re
 
-rus_letters=["А", "В", "Е", "К", "М", "Н", "О", "Р", "С", "Т", "У", "Х"]
-
-digits=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-
-for i in digits:
-    st.write(bool(re.match(f'[А-Я]+{i}{i}{i}[А-Я]+\d+', "А555ВС777")))
-
-st.write(bool(None))
 
 
 
