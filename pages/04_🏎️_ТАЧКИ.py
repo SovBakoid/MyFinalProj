@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
 import sqlite3
 import re
+import rtree
 
 with st.echo(code_location="below"):
 

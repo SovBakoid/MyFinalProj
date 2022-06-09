@@ -11,3 +11,4 @@ Scrapy==2.6.1
 Shapely==1.8.2
 streamlit==1.10.0
 streamlit_folium==0.6.13
+rtree==1.0.0
