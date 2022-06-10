@@ -75,11 +75,13 @@ with st.echo(code_location="below"):
 
     helloaboba=cian_sosat()
 
-    st.write(type(helloaboba))
+    #with open('helloaboba', 'wb') as f: - в локальной версии тут не стоят решетки
+        #f.write(helloaboba.content) - зашеренный стримлит просто не может так жестко парсить данные из-за открытого IP и прокси не помогают.
 
-    helloaboba
+    with open('helloaboba', 'rb') as f:
+        helloaboba=f.read()
 
-    yyyuuu= helloaboba.json()
+    yyyuuu= json.loads(helloaboba.decode("utf-8"))
 
     ya_uedu_zhit_v_abakan={"weight":[], "lat": [], "lon":[], "minprice":[], "maxprice":[]}
 
