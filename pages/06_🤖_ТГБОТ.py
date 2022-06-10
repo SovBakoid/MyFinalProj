@@ -12,7 +12,7 @@ with st.echo(code_location="below"):
     #import sqlite3
     #import logging
 
-    #TOKEN = '5551708011:AAEOHzx-oA8auTNg4MsD6VkQqV4DqczrFIM'
+    #TOKEN = '###'
 
     #logging.basicConfig(
         #format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
