@@ -149,6 +149,8 @@ with st.echo(code_location="below"):
 
         folium_static(m, width=850)
 
+    c.close()
+
         #geo_dfff=geo_dfff.sjoin(regions_of_msc_geoframe, op="intersects", how="inner")
 
 
