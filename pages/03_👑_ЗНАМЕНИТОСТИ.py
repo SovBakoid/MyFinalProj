@@ -40,7 +40,7 @@ with st.echo(code_location='below'):
                 new_url='https://www.bankgorodov.ru/region/moskva/famous/' + str(i)
                 yield response.follow(new_url, self.parse1)
 
-        #scrapy runspider /Users/eldaraer/PycharmProjects/pythonProject1/pages/spider.py -O table.csv
+        #scrapy runspider /Users/XXX/PycharmProjects/pythonProject1/pages/spider.py -O table.csv
 
     fp_n_l=pd.read_csv("table.csv")
 
