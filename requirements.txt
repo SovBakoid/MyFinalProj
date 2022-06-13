@@ -14,3 +14,4 @@ Shapely==1.8.2
 streamlit==1.10.0
 streamlit_folium==0.6.13
 xgboost==1.6.1
+Rtree==1.0.0

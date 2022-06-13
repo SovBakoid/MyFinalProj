@@ -8,6 +8,7 @@ from streamlit_folium import folium_static
 import json
 import matplotlib.pyplot as plt
 import numpy as np
+import rtree
 
 with st.echo(code_location="below"):
 
