@@ -26,7 +26,7 @@ with st.echo(code_location="below"):
     data_from_hse["brick"]=data_from_hse["brick"].astype("int64")
     data_from_hse["floor"]=data_from_hse["floor"].astype("int64")
 
-    st.write("Я взял вот такой датасэт с данными про стоимость квартир в Москве.")
+    st.write("Я взял вот такой датасэт (https://www.kaggle.com/code/vitalykuleshov/regression-analysis-the-price-of-moscow-flats) с данными про стоимость квартир в Москве.")
 
     a=data_from_hse.head()
     a
