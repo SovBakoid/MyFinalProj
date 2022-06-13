@@ -8,6 +8,11 @@ import streamlit.components.v1 as components
 
 with st.echo(code_location='below'):
 
+    st.header("Знаменитости, паук и сеть. :spider: :spider_web:")
+
+    st.write("""Я написал паучка Scrapy, который ходил по вот этому сайту https://www.bankgorodov.ru/region/moskva/famous/1, сохранял личные ссылки, 
+    листал подборку, заходил на страницу каждого человека из подборки и сохранял все ссылки на любых других людей. Код паучка смотрите внизу.""")
+
     class FameSpider(scrapy.Spider):
         name = 'famousspider'
         start_urls = ['https://www.bankgorodov.ru/region/moskva/famous/1']
@@ -53,6 +58,8 @@ with st.echo(code_location='below'):
 
     fp_n_l=fp_n_l[fp_n_l["second"].str.contains("famous-person")]
 
+    st.write("Починив вид части ссылок и убрав все лишние, то есть все, которые не ведут на других известных людей я получил вот такой датафрэм.")
+
     fp_n_l
 
     all_people=fp_n_l["first"].unique().tolist()
@@ -69,7 +76,15 @@ with st.echo(code_location='below'):
 
     fp2=fp2.drop_duplicates(keep='first')
 
+    st.write("Если у кого-то была ссылка на другого человека, то я их связывал друг с другом. После очистки датафрэйма от дубликатов и ссылок на самого себя получилось вот это.")
+
     fp2
+
+    st.write("Получается, что этот датафрэйм показывает все взаимные упоминания на личных страничках. Я создал точки, соответсвующие каждому известному москвичу, перечисленному на сайте, и связал их по признаку наличия каких-то взаимотоношений")
+
+    st.write("Подождите немного когда это все загрузится и вы сами все увидите.")
+
+    st.write("Присмотритесь, графы движутся!!")
 
     lonly_bois=c = [x for x in all_people if x not in fp2["p1"].unique().tolist()]
 
@@ -92,6 +107,8 @@ with st.echo(code_location='below'):
     components.html(HtmlFile.read(), height=1000, width=1000)
 
     st.balloons()
+
+    st.write("Теперь вы можете выбрать любого интересующего вас известного москвича и посмотреть с кем он связан.")
 
     perosn=st.selectbox('Кого вы хотите выбрать?', fp2["p1"].unique().tolist())
 

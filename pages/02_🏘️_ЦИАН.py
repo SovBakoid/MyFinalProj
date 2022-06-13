@@ -11,6 +11,10 @@ import numpy as np
 
 with st.echo(code_location="below"):
 
+    st.header("Крадем данные ЦИАН! :derelict_house_building:")
+
+    st.write("Я откопал недокументированный API ЦИАНа. Пришлось полностью копировать куки и хеддеры из браузера, чтобы внутренняя защита не блокировала. После я подобрал значения расскрытия на экране для запроса так, чтобы получить наиболее подробные данные по Москве. Потом я убрал всю (почти) недвижимость, которая находится за МКАДом. Получилось вот такое.")
+
     cookies = {
         'cf_clearance': 'Z3LHiJ7VZ4ksm5gXR0Ndh7lXgMI2TNlaAqzyTPMuBdY-1653477997-0-150',
         '_CIAN_GK': 'f4f4b97d-21e5-4d86-86fe-84e26fa9d09e',
@@ -143,6 +147,8 @@ with st.echo(code_location="below"):
 
     regions_avg_prices2=regions_avg_prices2.reset_index()
 
+    st.write("В результате я получил вот такую карту Москвы со средними ценами на квартиры согласно ЦИАН.")
+
     st.set_option('deprecation.showPyplotGlobalUse', False)
 
     fig, ax = plt.subplots(figsize=(12, 12))
@@ -152,6 +158,8 @@ with st.echo(code_location="below"):
     st.pyplot()
 
     #georegions_of_msc=gpd.GeoDataFrame(regions_of_msc, geometry = [Polygon([[[p.x, p.y] for p in f1] for f1 in [[Point(i[0], i[1]) for i in row["cords"]] for _, row in regions_of_msc.iterrows()]])])
+
+    st.write("Чтобы можно было лучше рассмотреть разницу в ценах между более удаленными от центра районами Москвы, я взял логирафм от средних цен. Вот, смотрите, что получилось.")
 
     regions_avg_prices2["ln_avg"]=np.log(regions_avg_prices2["real_avg_price"])
 

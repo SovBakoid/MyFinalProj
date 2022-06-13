@@ -48,7 +48,7 @@ with st.echo(code_location="below"):
     #if __name__=='__main__':
         #main()
 
-    st.header("@shurovbogbot")
+    st.header("@shurovbogbot :robot_face: :angel:")
 
     st.write("Я решил написать бота. Это быстро и просто.")
 

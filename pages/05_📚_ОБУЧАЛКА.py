@@ -9,7 +9,7 @@ from sklearn.metrics import r2_score
 
 with st.echo(code_location="below"):
 
-    st.header("Машинка")
+    st.header("Машинка((( :face_with_one_eyebrow_raised:")
 
     with open('flats_moscow.csv', "rb") as f:
         data_from_hse=pd.read_csv(f)
