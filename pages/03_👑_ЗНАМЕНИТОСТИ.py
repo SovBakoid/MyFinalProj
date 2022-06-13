@@ -84,7 +84,7 @@ with st.echo(code_location='below'):
 
     st.write("Подождите немного когда это все загрузится и вы сами все увидите.")
 
-    st.write("Присмотритесь, графы движутся!!")
+    st.write("Присмотритесь, графы движутся!! А еще вы можете двигать их сами!")
 
     lonly_bois=c = [x for x in all_people if x not in fp2["p1"].unique().tolist()]
 
